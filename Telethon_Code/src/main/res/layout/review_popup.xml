@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D3D3D3"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/review_popup_exit"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/cross"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/black" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Review"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bookmark_review"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_circle_button"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:padding="0dp"
+            app:backgroundTint="@color/black"
+            app:icon="@drawable/bookmark"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:iconSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D3D3D3"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout1">
+
+        <ImageView
+            android:id="@+id/review_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginRight="110dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+        <ImageView
+            android:id="@+id/profilePicture"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="13dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/default_profile"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/profile_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="12dp"
+            android:text="Username"
+            android:textColor="#55828b"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/reviews_date"
+            app:layout_constraintLeft_toRightOf="@+id/profilePicture"
+            app:layout_constraintTop_toTopOf="@+id/profilePicture" />
+
+        <TextView
+            android:id="@+id/reviews_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:paddingLeft="12dp"
+            android:text="Date"
+            android:textColor="#55828b"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="@+id/profilePicture"
+            app:layout_constraintLeft_toRightOf="@+id/profilePicture"
+            app:layout_constraintTop_toBottomOf="@+id/profile_username" />
+
+        <ImageView
+            android:id="@+id/heartPicture"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/like"
+            app:layout_constraintBottom_toBottomOf="@+id/number_likes"
+            app:layout_constraintRight_toLeftOf="@+id/number_likes"
+            app:layout_constraintTop_toTopOf="@+id/number_likes"
+            app:tint="#55828b" />
+
+        <TextView
+            android:id="@+id/number_likes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="85dp"
+            android:text="0"
+            android:textColor="#55828b"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/profilePicture"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/profilePicture" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/comment_button"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Comment"
+            android:textSize="15sp"
+            app:backgroundTint="#55828b"
+            app:icon="@drawable/comment"
+            app:iconGravity="textStart"
+            app:iconSize="15dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profilePicture" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/like_button"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Like"
+            android:textSize="15sp"
+            app:backgroundTint="@color/button_custom_background"
+            app:icon="@drawable/like"
+            app:iconGravity="textStart"
+            app:iconSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/comment_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/comment_button" />
+
+        <RatingBar
+            android:id="@+id/rating_review_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:scaleX=".75"
+            android:scaleY=".75"
+            android:stepSize="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/comment_button" />
+
+
+        <TextView
+            android:id="@+id/review_caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:gravity="center"
+            android:text="caption"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rating_review_bar" />
+
+        <TextView
+            android:id="@+id/review_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="40dp"
+            android:text="text"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/review_caption" />
+
+        <TextView
+            android:id="@+id/restaurant_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="80dp"
+            android:gravity="center"
+            android:text="restaurant"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/review_text" />
+
+        <ImageView
+            android:id="@+id/restaurant_picture"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="13dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toBottomOf="@+id/restaurant_name"
+            app:layout_constraintRight_toLeftOf="@+id/restaurant_name"
+            app:layout_constraintTop_toTopOf="@+id/restaurant_name" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/report_button"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Report"
+            android:textSize="15sp"
+            app:backgroundTint="#55828b"
+            app:icon="@drawable/report"
+            app:iconGravity="textStart"
+            app:iconSize="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

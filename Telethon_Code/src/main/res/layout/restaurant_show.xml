@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D3D3D3"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/restaurant_back_ic"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/black" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bookmark_review"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_circle_button"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:padding="0dp"
+            app:backgroundTint="@color/black"
+            app:icon="@drawable/bookmark"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:iconSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D3D3D3"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout1">
+
+        <ImageView
+            android:id="@+id/restaurant_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginRight="110dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+        <TextView
+            android:id="@+id/restaurant_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:gravity="center"
+            android:text="Restaurant"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/restaurant_review_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="120dp"
+            android:backgroundTint="@color/black"
+            android:text="0"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/restaurant_name"
+            app:layout_constraintTop_toBottomOf="@+id/restaurant_name" />
+
+        <TextView
+            android:id="@+id/textReviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="9dp"
+            android:backgroundTint="@color/black"
+            android:text="Reviews"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/restaurant_review_count"
+            app:layout_constraintStart_toEndOf="@+id/restaurant_review_count"
+            app:layout_constraintTop_toTopOf="@+id/restaurant_review_count" />
+
+        <RatingBar
+            android:id="@+id/rating_review_bar"
+            style="@android:style/Widget.DeviceDefault.RatingBar.Indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:stepSize="0.5"
+            app:layout_constraintBottom_toBottomOf="@+id/textReviews"
+            app:layout_constraintStart_toEndOf="@+id/textReviews"
+            app:layout_constraintTop_toTopOf="@+id/textReviews" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_review_button"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="REVIEW"
+            android:textSize="15sp"
+            app:backgroundTint="#55828b"
+            app:icon="@drawable/ic_plus"
+            app:iconGravity="textStart"
+            app:iconSize="15dp"
+            app:layout_constraintStart_toStartOf="@+id/restaurant_review_count"
+            app:layout_constraintTop_toBottomOf="@+id/rating_review_bar"
+            tools:layout_editor_absoluteY="68dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/details_button"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:text="MORE DETAILS"
+            android:textSize="15sp"
+            app:backgroundTint="#55828b"
+            app:iconSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/add_review_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/add_review_button"
+            tools:layout_editor_absoluteY="68dp" />
+
+        <View
+            android:id="@+id/lineView"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add_review_button"
+            tools:layout_editor_absoluteY="160dp" />
+
+        <LinearLayout
+            android:id="@+id/recycler_view_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lineView">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_restaurant_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lineView">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+        <View
+            android:id="@+id/lineView2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_reservation_button"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MAKE A RESERVATION"
+            android:textSize="13sp"
+            app:backgroundTint="#55828b"
+            app:icon="@drawable/ic_reserve"
+            app:iconGravity="textStart"
+            app:iconSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/order_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteY="68dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/order_button"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ORDER NOW"
+            android:textSize="13sp"
+            app:backgroundTint="#55828b"
+            app:icon="@drawable/cart"
+            app:iconGravity="textStart"
+            app:iconSize="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/add_reservation_button"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteY="68dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
